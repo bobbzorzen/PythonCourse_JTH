@@ -1,8 +1,11 @@
-def store(list_of_values, memory_value):
-	pass
+import json
+def store(list_of_values):
+    with open("calculator_state.json", "w") as fp:
+        json.dump(list_of_values, fp)
 
-def load(list_of_values):
-	pass
+def load():
+    with open("calculator_state.json", "r") as fp:
+        return json.load(fp)
     
 def getIntegerInput(inputText, errorMessage="Invalid number"):
     while True :
@@ -50,6 +53,12 @@ def calculator():
                 memory_value = undo_list[-1]
             else:
                 print("There is nothing to undo")
+        elif operation == "store":
+            store(undo_list)
+        elif operation == "load":
+            undo_list = load()
+            memory_value = undo_list[-1]
+
         print(memory_value, " is stored in memory.")
     return memory_value
 
