@@ -77,7 +77,7 @@ class ConnectFour:
         last_move_player = last_move["player"]
         last_move_column = last_move["column"]
         last_move_row = -1
-        for r in reversed(range(game.number_of_rows)):
+        for r in reversed(range(self.number_of_rows)):
             if self.get_cell_value(last_move_column, r) != " ":
                 last_move_row = r
                 break
