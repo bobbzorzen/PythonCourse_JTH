@@ -1,0 +1,7 @@
+INSERT: Alice, 51, Artists
+INSERT: Belle, 42, Boss
+INSERT: Chloe, 33, Clown
+UPDATE: Belle, age, 24
+DELETE: Alice
+INSERT: Daisy, 14, Trainee
+UPDATE: Chloe, name, Clair
