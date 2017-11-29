@@ -4,7 +4,6 @@ import os
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 
-nr_of_moves = 0
 game = ConnectFour(7)
 winner = game.get_winner()
 while winner == " ":
@@ -14,4 +13,6 @@ while winner == " ":
     game.make_move(column)
     winner = game.get_winner()
     if winner != " ":
+        cls()
+        game.print_game()
         print("Winner winner, chicken dinner: ", winner)
